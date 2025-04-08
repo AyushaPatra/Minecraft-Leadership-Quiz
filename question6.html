@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 6 - Minecraft Leadership Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Unique image for Question 6 -->
+    <img src="images/q6.webp" alt="Mooshroom" class="question-img">
+    <h1>Question 6</h1>
+    <p>Which quality best describes your leadership style?</p>
+    <form id="questionForm">
+      <label><input type="radio" name="answer" value="creeper" required> Quietly impactful with a surprise factor</label>
+      <label><input type="radio" name="answer" value="cow"> Steady, nurturing, and supportive</label>
+      <label><input type="radio" name="answer" value="chicken"> Bold, optimistic, and opportunity-driven</label>
+      <label><input type="radio" name="answer" value="mooshroom"> Innovative, fun-loving, and full of surprises</label>
+      <!-- Navigation buttons: Back and Next -->
+      <div class="navigation-buttons">
+        <button type="button" id="backButton">Back</button>
+        <button type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Load any previously saved answer for question 6
+    loadSavedAnswer('q6');
+
+    handleQuestionSubmission('questionForm', 'q6', 'question7.html');
+
+    // Back button: navigate to question5.html with fade transition
+    document.getElementById('backButton').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigateWithFade('question5.html');
+    });
+  </script>
+</body>
+</html>

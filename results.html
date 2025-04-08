@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results - Minecraft Leadership Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Your Minecraft Leadership Style</h1>
+    <div id="result"></div>
+    <button onclick="restartQuiz()">Restart Quiz</button>
+  </div>
+  <script>
+    // Mob details (sourced from Minecraft Wiki)
+    const mobDetails = {
+      creeper: {
+        name: "Creeper",
+        description: "Your leadership is about power dynamics, being quiet yet unpredictable, and creating a big impact when least expected.",
+        image: "images/creeper.webp"
+      },
+      axolotl: {
+        name: "Axolotl",
+        description: "You focus on understanding others, maintaining balance, and bringing a calm, healing energy.",
+        image: "images/axolotl.webp"
+      },
+      chicken: {
+        name: "Chicken",
+        description: "Your style centers on group development, optimism, and seizing opportunities to energize your team.",
+        image: "images/chicken.webp"
+      },
+      cow: {
+        name: "Cow",
+        description: "You’re a nurturing mentor—dependable, supportive, and always there to provide comfort.",
+        image: "images/cow.webp"
+      },
+      mooshroom: {
+        name: "Mooshroom",
+        description: "You empower your team with your quirky, fun-loving, and surprising approach that makes life more enjoyable.",
+        image: "images/mooshroom.webp"
+      },
+      bee: {
+        name: "Bee",
+        description: "Collaboration is your strength. You work diligently and buzz around ensuring collective harmony.",
+        image: "images/bee.webp"
+      },
+      spider: {
+        name: "Spider",
+        description: "You reflect deeply, strategize, and navigate complex challenges with resilience and innovation.",
+        image: "images/spider.webp"
+      },
+      zombie: {
+        name: "Zombie",
+        description: "You excel at problem solving, staying determined and pushing forward despite setbacks.",
+        image: "images/zombie.webp"
+      }
+    };
+
+    // Initialize scores for each mob
+    const scores = {
+      creeper: 0,
+      axolotl: 0,
+      chicken: 0,
+      cow: 0,
+      mooshroom: 0,
+      bee: 0,
+      spider: 0,
+      zombie: 0
+    };
+
+    // Loop through all 8 questions and tally answers stored in localStorage
+    for (let i = 1; i <= 8; i++) {
+      const answer = localStorage.getItem('q' + i);
+      if (answer && scores.hasOwnProperty(answer)) {
+        scores[answer]++;
+      }
+    }
+
+    // Determine which mob has the highest score
+    let maxScore = Math.max(...Object.values(scores));
+    let topMobs = Object.keys(scores).filter(mob => scores[mob] === maxScore);
+
+    // Randomly choose one if there's a tie
+    let topMob = topMobs[Math.floor(Math.random() * topMobs.length)];
+
+    // Display the result
+    document.getElementById('result').innerHTML = `
+      <img src="${mobDetails[topMob].image}" alt="${mobDetails[topMob].name}" class="result-img">
+      <h2>You are the ${mobDetails[topMob].name}!</h2>
+      <p>${mobDetails[topMob].description}</p>
+    `;
+
+    // Function to restart the quiz
+    function restartQuiz() {
+      localStorage.clear();
+      window.location.href = "question1.html";
+    }
+  </script>
+</body>
+</html>

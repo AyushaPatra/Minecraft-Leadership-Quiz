@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 1 - Minecraft Leadership Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Unique image for Question 1 -->
+    <img src="images/q1.avif" alt="q1-image" class="question-img">
+    <h1>Question 1</h1>
+    <p>How do you approach power dynamics in your team?</p>
+    <form id="questionForm">
+      <label><input type="radio" name="answer" value="creeper" required> Quiet and unpredictable, creating impact when least expected</label>
+      <label><input type="radio" name="answer" value="axolotl"> Understanding others’ circumstances and maintaining peace</label>
+      <label><input type="radio" name="answer" value="chicken"> Energizing the group with optimism and seizing opportunities</label>
+      <label><input type="radio" name="answer" value="cow"> Mentoring and supporting with reliability</label>
+      <div class="navigation-buttons">
+        <!-- For q1, Back could go to index.html -->
+        <button type="button" onclick="navigateWithFade('index.html')">Back</button>
+        <button type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // On page load, load the saved answer for question 1 if available
+    loadSavedAnswer('q1');
+    // Handle form submission; on submit, save answer for 'q1' and navigate to question2.html
+    handleQuestionSubmission('questionForm', 'q1', 'question2.html');
+  </script>
+</body>
+</html>

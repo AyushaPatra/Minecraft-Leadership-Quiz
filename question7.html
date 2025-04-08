@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 7 - Minecraft Leadership Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Unique image for Question 7 -->
+    <img src="images/q7.webp" alt="Zombie" class="question-img">
+    <h1>Question 7</h1>
+    <p>In a team, what role do you naturally take on?</p>
+    <form id="questionForm">
+      <label><input type="radio" name="answer" value="cow" required> The supportive mentor ensuring everyone feels cared for</label>
+      <label><input type="radio" name="answer" value="zombie"> The determined problem-solver who never gives up</label>
+      <label><input type="radio" name="answer" value="spider"> The reflective strategist navigating complex issues</label>
+      <label><input type="radio" name="answer" value="bee"> The diligent collaborator working tirelessly for the group</label>
+      <!-- Navigation buttons: Back and Next -->
+      <div class="navigation-buttons">
+        <button type="button" id="backButton">Back</button>
+        <button type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Load any previously saved answer for question 7
+    loadSavedAnswer('q7');
+
+    handleQuestionSubmission('questionForm', 'q7', 'question8.html');
+
+    // Back button: navigate to question6.html with fade transition
+    document.getElementById('backButton').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigateWithFade('question6.html');
+    });
+  </script>
+</body>
+</html>

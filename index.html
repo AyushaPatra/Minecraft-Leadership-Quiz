@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Leadership Quiz - Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@500&family=Orienta&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Optional inline adjustments for the intro page */
+    .header-img {
+      width: 300px;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="images/hmp.png" alt="HMP Logo" class="header-img" style="width: 250px; height: auto;">
+    <h1>Minecraft Leadership Quiz</h1>
+    <p>
+      Welcome to the Minecraft Leadership Quiz! This fun, interactive quiz will reveal your leadership style by comparing your answers to the unique qualities of Minecraft mobs. You’ll answer 8 questions, each highlighting a different trait, and in the end, you'll find out which mob best represents your leadership.
+    </p>
+    <button id="startButton">Start Quiz</button>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // When the "Start Quiz" button is pressed, call navigateWithFade() to transition to question1.html
+    document.getElementById('startButton').addEventListener('click', function (e) {
+      e.preventDefault();
+      navigateWithFade('question1.html');
+    });
+  </script>
+</body>
+</html>

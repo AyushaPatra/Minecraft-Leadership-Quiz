@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 5 - Minecraft Leadership Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Unique image for Question 5 -->
+    <img src="images/q5.jpg" alt="Spider" class="question-img">
+    <h1>Question 5</h1>
+    <p>How do you handle complex or challenging situations?</p>
+    <form id="questionForm">
+      <label><input type="radio" name="answer" value="spider" required> I reflect deeply and devise intricate solutions</label>
+      <label><input type="radio" name="answer" value="bee"> I collaborate tirelessly for the collective good</label>
+      <label><input type="radio" name="answer" value="zombie"> I persistently solve problems step by step</label>
+      <label><input type="radio" name="answer" value="axolotl"> I consider others’ needs to maintain balance</label>
+      <!-- Navigation buttons: Back and Next -->
+      <div class="navigation-buttons">
+        <button type="button" id="backButton">Back</button>
+        <button type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Load any previously saved answer for question 5
+    loadSavedAnswer('q5');
+
+    handleQuestionSubmission('questionForm', 'q5', 'question6.html');
+
+    // Back button: navigate to question4.html with fade transition
+    document.getElementById('backButton').addEventListener('click', function(e) {
+      e.preventDefault();
+      navigateWithFade('question4.html');
+    });
+  </script>
+</body>
+</html>
