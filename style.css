@@ -19,7 +19,8 @@ body {
 
 /* Ensure that the container can transition its opacity */
 .container {
-  width: 600px;                /* Set a fixed width */
+  width: 90%;
+  max-width: 600px;            /* Set a fixed width */
   min-height: 500px;           /* Ensures enough vertical space */
   margin: 2rem auto;
   padding: 1rem;
@@ -106,8 +107,8 @@ form label,
 }
 
 .question-img {
-  width: 550px;         /* Set a fixed width */
-  height: 250px;        /* Set a fixed height */
+  max-width: 100%;
+  height: auto;
   object-fit: cover;    /* Ensures the image fills the box neatly */
   margin-bottom: 1rem;
   display: block;
@@ -120,4 +121,25 @@ form label,
   height: 250px;
   display: block;
   margin: 0 auto 1rem auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .question-img, .result-img {
+    width: 80%;
+    height: auto;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 0.8rem;
+  }
 }
